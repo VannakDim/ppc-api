@@ -37,8 +37,18 @@ class PostController extends Controller
             'body' => 'required|string'
         ]);
 
-        $image = $this->saveImage($request->image, 'posts');
+        // $image = $this->saveImage($request->image, 'posts');
 
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/posts');
+            $image->move($destinationPath, $name);
+            $imagePath = url('/').'/uploads/posts/'.$name;
+            $data['image'] = $imagePath != null ? $imagePath : null;
+
+        }
+        
         $post = Post::create([
             'body' => $attrs['body'],
             'user_id' => auth()->user()->id,
