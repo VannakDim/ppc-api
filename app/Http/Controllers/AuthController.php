@@ -93,7 +93,7 @@ class AuthController extends Controller
 
         auth()->user()->update([
             'name' => $attrs['name'],
-            'image' => $imagePath
+            'image' => 'https://ppc-church.com/uploads/posts/1705592612.png'
         ]);
 
         return response([
