@@ -77,9 +77,9 @@ class AuthController extends Controller
     public function update(Request $request)
     {
         $imageUrl=null;
-        $attrs = $request->validate([
-            'name' => 'required|string'
-        ]);
+        // $attrs = $request->validate([
+        //     'name' => 'required|string'
+        // ]);
 
         // $image = $this->saveImage($request->image, 'profiles');
         if($request->hasFile('image')){
