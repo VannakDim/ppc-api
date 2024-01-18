@@ -32,6 +32,8 @@ class PostController extends Controller
     // create a post
     public function store(Request $request)
     {
+        $imagePath=null;
+        $data = $request->all();
         //validate fields
         $attrs = $request->validate([
             'body' => 'required|string'
@@ -52,7 +54,7 @@ class PostController extends Controller
         $post = Post::create([
             'body' => $attrs['body'],
             'user_id' => auth()->user()->id,
-            'image' => $image
+            'image' => $imagePath
         ]);
 
         // for now skip for post image
