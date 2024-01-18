@@ -94,7 +94,7 @@ class AuthController extends Controller
 
         auth()->user()->update([
             'name' => $attrs['name'],
-            'image' => request->image
+            'image' => time().'.'. request->file('image')->getClientOriginalExtension()
         ]);
 
         return response([
