@@ -76,7 +76,8 @@ class AuthController extends Controller
     // update user
     public function update(Request $request)
     {
-        $imageUrl=null;
+        // $imageUrl=null;
+        $data = $request->all();
         // $attrs = $request->validate([
         //     'name' => 'required|string'
         // ]);
@@ -88,14 +89,11 @@ class AuthController extends Controller
             $destinationPath = public_path('/uploads/profiles');
             $image->move($destinationPath, $name);
             $imagePath = url('/').'/uploads/profiles/'.$name;
-            $imageUrl = $imagePath != null ? $imagePath : null;
+            $data['image'] = $imagePath != null ? $imagePath : null;
 
         }
-
-        auth()->user()->update([
-            'name' => $request['name'],
-            'image' => $imageUrl
-        ]);
+        
+        auth()->user()->update($data);
 
         return response([
             'message' => 'User updated.',
