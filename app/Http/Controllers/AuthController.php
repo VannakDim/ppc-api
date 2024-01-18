@@ -80,11 +80,20 @@ class AuthController extends Controller
             'name' => 'required|string'
         ]);
 
-        $image = $this->saveImage($request->image, 'profiles');
+        $imagePath = null;
+        // Handle the image upload
+        if (request()->hasFile('image')) {
+            $image = request()->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/user'), $imageName);
+            // add with base domain url to store in database
+            $imagePath = url('/uploads/user/' . $imageName);
+        }
+        // $image = $this->saveImage($request->image, 'profiles');
 
         auth()->user()->update([
             'name' => $attrs['name'],
-            'image' => $image
+            'image' => $imagePath
         ]);
 
         return response([
