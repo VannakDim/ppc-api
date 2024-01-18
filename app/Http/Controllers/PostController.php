@@ -34,8 +34,7 @@ class PostController extends Controller
     {
         $imagePath=null;
         $data = $request->all();
-        $user = Auth::user();
-        
+        $user = auth()->user()->id,
         //validate fields
         $attrs = $request->validate([
             'body' => 'required|string'
@@ -52,8 +51,8 @@ class PostController extends Controller
             $data['image'] = $imagePath != null ? $imagePath : null;
 
         }
-        $data['user_id'] = $user->id;
-
+        $data['user_id'] = $user;
+        
         $post = Post::create($data);
 
         // for now skip for post image
