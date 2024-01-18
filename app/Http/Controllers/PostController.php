@@ -34,6 +34,8 @@ class PostController extends Controller
     {
         $imagePath=null;
         $data = $request->all();
+        $user = Auth::user();
+        
         //validate fields
         $attrs = $request->validate([
             'body' => 'required|string'
