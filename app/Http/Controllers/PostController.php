@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
@@ -34,7 +35,8 @@ class PostController extends Controller
     {
         $imagePath=null;
         $data = $request->all();
-        $user = auth()->user()->id;
+        $data['user_id'] = auth()->user()->id;
+        
         //validate fields
         $attrs = $request->validate([
             'body' => 'required|string'
@@ -51,7 +53,6 @@ class PostController extends Controller
             $data['image'] = $imagePath != null ? $imagePath : null;
 
         }
-        $data['user_id'] = $user;
         
         $post = Post::create($data);
 
