@@ -50,12 +50,9 @@ class PostController extends Controller
             $data['image'] = $imagePath != null ? $imagePath : null;
 
         }
-        
-        $post = Post::create([
-            'body' => $attrs['body'],
-            'user_id' => auth()->user()->id,
-            'image' => $imagePath
-        ]);
+        $data['user_id'] = $user->id;
+
+        $post = Post::create($data);
 
         // for now skip for post image
 
