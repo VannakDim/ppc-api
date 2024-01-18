@@ -76,7 +76,7 @@ class AuthController extends Controller
     // update user
     public function update(Request $request)
     {
-        // $imageUrl=null;
+        $imagePath=null;
         $data = $request->all();
         // $attrs = $request->validate([
         //     'name' => 'required|string'
