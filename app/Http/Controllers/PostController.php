@@ -38,9 +38,9 @@ class PostController extends Controller
         $data['user_id'] = auth()->user()->id;
         
         //validate fields
-        $attrs = $request->validate([
-            'body' => 'required|string'
-        ]);
+        // $attrs = $request->validate([
+        //     'body' => 'required|string'
+        // ]);
 
         // $image = $this->saveImage($request->image, 'posts');
 
