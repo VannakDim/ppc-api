@@ -76,11 +76,12 @@ class AuthController extends Controller
     // update user
     public function update(Request $request)
     {
+        $imagePath = null;
+        
         $attrs = $request->validate([
             'name' => 'required|string'
         ]);
 
-        $imagePath = null;
         // Handle the image upload
         if (request()->hasFile('image')) {
             $image = request()->file('image');
@@ -93,7 +94,7 @@ class AuthController extends Controller
 
         auth()->user()->update([
             'name' => $attrs['name'],
-            'image' => 'https://ppc-church.com/uploads/posts/1705592612.png'
+            'image' => $imagePath
         ]);
 
         return response([
