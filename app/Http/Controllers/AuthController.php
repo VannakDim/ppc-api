@@ -93,7 +93,7 @@ class AuthController extends Controller
         }
 
         auth()->user()->update([
-            'name' => $attrs['name'],
+            'name' => $request->name(),
             'image' => $imageUrl
         ]);
 
