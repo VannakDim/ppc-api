@@ -77,7 +77,7 @@ class AuthController extends Controller
     public function update(Request $request)
     {
         $imagePath = null;
-        
+
         $attrs = $request->validate([
             'name' => 'required|string'
         ]);
@@ -94,7 +94,7 @@ class AuthController extends Controller
 
         auth()->user()->update([
             'name' => $attrs['name'],
-            'image' => $imagePath
+            'image' => request->image
         ]);
 
         return response([
