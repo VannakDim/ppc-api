@@ -76,12 +76,15 @@ class AuthController extends Controller
     // update user
     public function update(Request $request)
     {
-        $imagePath = null;
+        $imagePath=null;
+        $data=$request->all();
 
         $attrs = $request->validate([
             'name' => 'required|string'
         ]);
+        $data['name']= $request->name;
 
+        $imagePath = 'none';
         // Handle the image upload
         if (request()->hasFile('image')) {
             $image = request()->file('image');
@@ -90,12 +93,9 @@ class AuthController extends Controller
             // add with base domain url to store in database
             $imagePath = url('/uploads/user/' . $imageName);
         }
-        // $image = $this->saveImage($request->image, 'profiles');
 
-        auth()->user()->update([
-            'name' => $attrs['name'],
-            'image' => time().'.'. request->file('image')->getClientOriginalExtension()
-        ]);
+        $data['image']= $imagePath;
+        auth()->user()->update($data);
 
         return response([
             'message' => 'User updated.',

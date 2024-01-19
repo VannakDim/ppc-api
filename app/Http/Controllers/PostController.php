@@ -33,7 +33,7 @@ class PostController extends Controller
     // create a post
     public function store(Request $request)
     {
-        $imagePath=null;
+        $imagePath='none';
         $data = $request->all();
         $data['user_id'] = auth()->user()->id;
         
@@ -42,7 +42,6 @@ class PostController extends Controller
         //     'body' => 'required|string'
         // ]);
 
-        // $image = $this->saveImage($request->image, 'posts');
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -51,7 +50,6 @@ class PostController extends Controller
             $image->move($destinationPath, $name);
             $imagePath = url('/').'/uploads/posts/'.$name;
             $data['image'] = $imagePath != null ? $imagePath : null;
-
         }
         
         $post = Post::create($data);
