@@ -6,6 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\BalanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +52,17 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
     // Like
     Route::post('/posts/{id}/likes', [LikeController::class, 'likeOrUnlike']); // like or dislike back a post
+
+
+    // Income Route
+    Route::get('income', [IncomeController::class, 'index']);
+    Route::post('income', [IncomeController::class, 'store']);
+
+    // Expense Route
+    Route::get('expense', [ExpenseController::class, 'index']);
+    Route::post('expense', [ExpenseController::class, 'store']);
+
+    // Balance Route
+    Route::get('balance', [BalanceController::class, 'totalBalance']);
+
 });
