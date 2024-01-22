@@ -11,8 +11,8 @@ class Expense extends Model
 
     protected $fillable = [
         'title',
-        'amount-usd',
-        'amount-riel',
+        'usd',
+        'riel',
         'description',
         'status',
         'user_id',

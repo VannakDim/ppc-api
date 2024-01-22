@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Income;
 use App\Models\Expense;
 use App\Models\ExchangeRate;
+use Illuminate\Support\Carbon;
 
 class BalanceController extends Controller
 {
@@ -18,24 +19,27 @@ class BalanceController extends Controller
         //
     }
 
-    public function totalBalance()
+    public function totalBalance(Request $request)
     {
         $exchange_rate = ExchangeRate::where('currency','usd-riel')->first();
         $user = Auth::user();
         if($user != null){
-        $income_usd = Income::all()->sum('usd');
-        $income_riel = Income::all()->sum('riel');
-        $expense_usd = Expense::all()->sum('usd');
-        $expense_riel = Expense::all()->sum('riel');
+            $fromDate = $request->fromDate;
+            $toDate = $request->toDate;
+
+            $income_usd = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum( 'usd');
+            $income_riel = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum('riel');
+            $expense_usd = Expense::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum( 'usd');
+            $expense_riel = Expense::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum('riel');
             return response()->json([
-                'total-income-usd'=>$income_usd ,
-                'total-income-riel'=>$income_riel ,
-                'total-income-as-usd'=>($income_riel/$exchange_rate->rate) + $income_usd,
-                'total-expense-usd'=>$expense_usd ,
-                'total-expense-riel'=>$expense_riel ,
-                'total-expense-as-usd'=>($expense_riel/$exchange_rate->rate) + $expense_usd,
-                'Final-Balance-as-usd'=>(($income_riel/$exchange_rate->rate) + $income_usd) - (($expense_riel/$exchange_rate->rate) + $expense_usd)
-            ],200);
+                    'total-income-usd'=>$income_usd ,
+                    'total-income-riel'=>$income_riel ,
+                    'total-income-as-usd'=>($income_riel/$exchange_rate->rate) + $income_usd,
+                    'total-expense-usd'=>$expense_usd ,
+                    'total-expense-riel'=>$expense_riel ,
+                    'total-expense-as-usd'=>($expense_riel/$exchange_rate->rate) + $expense_usd,
+                    'Final-Balance-as-usd'=>(($income_riel/$exchange_rate->rate) + $income_usd) - (($expense_riel/$exchange_rate->rate) + $expense_usd)]
+            ,200);
         }
     }
 

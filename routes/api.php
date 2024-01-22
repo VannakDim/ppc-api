@@ -63,6 +63,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('expense', [ExpenseController::class, 'store']);
 
     // Balance Route
-    Route::get('balance', [BalanceController::class, 'totalBalance']);
+    Route::post('balance', [BalanceController::class, 'totalBalance']);
 
 });

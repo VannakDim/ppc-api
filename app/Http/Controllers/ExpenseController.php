@@ -16,6 +16,13 @@ class ExpenseController extends Controller
      */
     public function index()
     {
+        return response([
+            'expenses' => Expense::orderBy('created_at', 'desc')->with('user:id,name,image')->get()
+        ], 200);
+    }
+
+    //Display total expense
+    public function totalExpense(){
         $user = Auth::user();
         $exchange_rate = ExchangeRate::where('currency','usd-riel')->first();
         if($user != null){

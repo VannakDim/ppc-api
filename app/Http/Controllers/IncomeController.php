@@ -27,8 +27,8 @@ class IncomeController extends Controller
         if($user != null){
             $fromDate="2024-01-15";
             $toDate=Carbon::now();
-        $income_usd = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum( 'usd');
-        $income_riel = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum('riel');
+            $income_usd = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum( 'usd');
+            $income_riel = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum('riel');
             return response()->json([
                 'title'=>'Income from 01-JAN-2024 until now',
                 'total-usd-income'=>$income_usd,
