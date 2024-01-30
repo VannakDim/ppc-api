@@ -20,6 +20,7 @@ class PostController extends Controller
             })
             ->get()
         ], 200);
+        // return response(['posts' => Post::all()], 200);
     }
 
     // get single post
