@@ -3,6 +3,11 @@
 
 
 @section('style')
+<style>
+	.cus{
+		padding-left:0;
+	}
+</style>
 @endsection
 
 @section('content')
@@ -15,8 +20,8 @@
 			</ul>
 		</div>
 
-		@if(auth()->user()->role_id==1)
 		<div class="about-us">
+		@if(auth()->user()->role_id==1)
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="pull-left">Balance record</h3>
@@ -24,80 +29,45 @@
 				</div>
 			</div>
 			<hr>
+		@endif
+		@if(auth()->user()->role_id>=1)	
 			<div class="row">
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Income</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $income_usd }}</h3>
-								<h3>៛ {{ $income_riel }}</h3>
-							</ul>
+				<div class="col-md-4 cus">	
+					<div class="col-md-12">
+						<div class="post-grid-style">
+							<div class="post-detail">
+								<h3 class="pull-left">Income</h3>
+									<ul class="post-meta3">
+									<h3>$ {{ number_format($income_usd,2) }}</h3>
+									<h3>៛ {{ number_format($income_riel) }}</h3>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Expense</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $expense_usd }}</h3>
-								<h3>៛ {{ $expense_riel }}</h3>
-							</ul>
+				<div class="col-md-4 cus">	
+					<div class="col-md-12">
+						<div class="post-grid-style">
+							<div class="post-detail">
+								<h3 class="pull-left">Expense</h3>
+									<ul class="post-meta3">
+									<h3>$ {{ number_format($expense_usd,2) }}</h3>
+									<h3>៛ {{ number_format($expense_riel) }}</h3>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-				<hr>
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Balance</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $balance_usd }}</h3>
-								<h3>៛ {{ $balance_riel }}</h3>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		@elseif(auth()->user()->role_id>1)
-		<div class="about-us">
-			<h3>Balance record</h3>
-
-			<div class="row">
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Income</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $income_usd }}</h3>
-								<h3>៛ {{ $income_riel }}</h3>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Expense</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $expense_usd }}</h3>
-								<h3>៛ {{ $expense_riel }}</h3>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<hr>
-				<div class="col-md-12">
-					<div class="post-grid-style">
-						<div class="post-detail">
-							<h3 class="pull-left">Balance</h3>
-								<ul class="post-meta3">
-								<h3>$ {{ $balance_usd }}</h3>
-								<h3>៛ {{ $balance_riel }}</h3>
-							</ul>
+				<div class="col-md-4 cus">
+					<div class="col-md-12">
+						<div class="post-grid-style">
+							<div class="post-detail">
+								<h3 class="pull-left">Balance</h3>
+									<ul class="post-meta3">
+									<h3>$ {{ number_format($balance_usd,2) }}</h3>
+									<h3>៛ {{ number_format($balance_riel) }}</h3>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

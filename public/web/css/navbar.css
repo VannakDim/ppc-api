@@ -44,10 +44,6 @@
   :root {
     --normal-font-size: 1.3rem;
   }
-  #banner-caption{
-    font-family: 'Khmer-Muol';
-    font-size: 1.2rem;
-  }
 }
 
 /*=============== BASE ===============*/
@@ -55,6 +51,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+#banner-caption{
+  font-family: 'Khmer-Muol';
 }
 
 body {
@@ -98,9 +98,7 @@ a {
   font-size: 1.2rem;
 } 
 
-#banner-caption{
-  font-size: 1.5rem;
-}
+
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
@@ -166,9 +164,7 @@ a {
     height: 3rem;
     /* padding: 0 10; */
   }
-  #banner-caption{
-    font-size: 1.2rem;
-  }
+
   .nav__menu {
     position: absolute;
     left: 0;
@@ -303,9 +299,7 @@ a {
   .nav__link {
     padding-inline: 1rem;
   }
-  #banner-caption{
-    font-size: 1rem;
-  }
+
   .nav__logo{
   padding-left: 10px;
 
