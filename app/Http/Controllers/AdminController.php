@@ -14,6 +14,16 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
+    public function income()
+    {
+        return view('web.add_income');
+    }
+
+    public function expense()
+    {
+        return view('web.add_expense');
+    }
+
     
 
 }

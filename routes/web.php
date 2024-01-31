@@ -42,5 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::middleware(['auth:sanctum','is_admin'])->group(function () {
     // Dashboard
     Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('dashboardRoute');
+    Route::get('/income-dashboard', [AdminController::class, 'income'])->name('addIncome');
+    Route::get('/expense-dashboard', [AdminController::class, 'expense'])->name('addExpense');
 
 });

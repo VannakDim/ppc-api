@@ -13,6 +13,7 @@
 @section('content')
 <div class="col-md-8">
 	<div class="home-news-block block-no-space">
+		
 		<div class="crumb inner-page-crumb">
 			<ul>
 				<li><i class="ti-home"></i><a href="/">Home</a> / </li>
@@ -25,7 +26,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="pull-left">Balance record</h3>
-					<a href="{{ route('dashboard') }}" class="btn btn-primary pull-right btn-flat"><i class="fa fa-plus"></i> Add Record</a>
+					
 				</div>
 			</div>
 			<hr>
@@ -40,7 +41,8 @@
 									<ul class="post-meta3">
 									<h3>$ {{ number_format($income_usd,2) }}</h3>
 									<h3>៛ {{ number_format($income_riel) }}</h3>
-								</ul>
+									</ul>
+									<a href="{{ route('addIncome') }}" class="btn btn-success pull-left btn-flat"><i class="fa fa-plus"></i> Add Income</a>
 							</div>
 						</div>
 					</div>
@@ -53,7 +55,8 @@
 									<ul class="post-meta3">
 									<h3>$ {{ number_format($expense_usd,2) }}</h3>
 									<h3>៛ {{ number_format($expense_riel) }}</h3>
-								</ul>
+									</ul>
+								<a href="{{ route('addExpense') }}" class="btn btn-danger pull-left btn-flat"><i class="fa fa-plus"></i> Add Expense</a>
 							</div>
 						</div>
 					</div>
@@ -66,7 +69,7 @@
 									<ul class="post-meta3">
 									<h3>$ {{ number_format($balance_usd,2) }}</h3>
 									<h3>៛ {{ number_format($balance_riel) }}</h3>
-								</ul>
+									</ul>
 							</div>
 						</div>
 					</div>
