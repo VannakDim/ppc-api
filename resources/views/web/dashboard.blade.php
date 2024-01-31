@@ -22,16 +22,14 @@
 		</div>
 
 		<div class="about-us">
-		@if(auth()->user()->role_id==1)
+		@if(auth()->user()->role_id>=1)
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="pull-left">Balance record</h3>
+					<h3 class="pull-left">Balance summary</h3>
 					
 				</div>
 			</div>
 			<hr>
-		@endif
-		@if(auth()->user()->role_id>=1)	
 			<div class="row">
 				<div class="col-md-4 cus">	
 					<div class="col-md-12">
