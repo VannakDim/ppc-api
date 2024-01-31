@@ -58,7 +58,7 @@
 
 								<div class="row">
 									<div class="col-md-12">
-										<p style="display: inline;">សូមពិនិត្យផ្ទៀងផ្ទាត់មើលទិន្នន័យ មុនពេលចុចលើប៊ូតុង Add expense</p>
+										<p style="display: inline;">សូមពិនិត្យផ្ទៀងផ្ទាត់មើលទិន្នន័យ</p>
 										<button type="submit" class="btn btn-primary pull-right">Add expense</button>
 									</div>
 								</div>
