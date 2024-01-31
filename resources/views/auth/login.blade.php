@@ -35,8 +35,13 @@
                             <span class="button__text">Log In Now</span>
                             <i class="button__icon fas fa-chevron-right"></i>
                         </button>				
-                        			
+                        <div class="screen__content">
+                            <div class="login__field">
+                                Don't have an account <a class="" href="/register">Register</a>
+                            </div>
+                        </div>		
                     </form>
+                    
                     <div class="social-login">
                         <h3>log in via</h3>
                         <div class="social-icons">

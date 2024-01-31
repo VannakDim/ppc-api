@@ -25,7 +25,7 @@
                         <!-- /. left section -->
 
                         <!-- /. right side widget -->
-                        @yield('sidebar')
+                        {{-- @yield('sidebar') --}}
                         <!--/. right side widget-->
                     </div>
                 </div>

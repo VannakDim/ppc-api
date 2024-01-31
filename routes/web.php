@@ -21,8 +21,12 @@ use App\Http\Controllers\WebController;
 Route::get('/', function () {
     return view('web.home');
 });
+
 Route::get('/login', function () {
     return view('auth.login');
+});
+Route::get('/register', function () {
+    return view('auth.register');
 });
 
 //None protected route
