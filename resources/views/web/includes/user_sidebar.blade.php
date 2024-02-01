@@ -6,7 +6,7 @@
 				@if(!empty($user->image))
 				<img src="{{ $user->image }}" alt="Profile Photo" class="media-object img-circle" style="width:80px; margin: 0 auto; padding-bottom: 10px;">
 				@else 
-				{{-- <img src="{{ get_gravatar($user->email) }}" class="media-object img-circle" style="width:80px; margin: 0 auto; padding-bottom: 10px;"> --}}
+				<img src="/uploads/user/avatar.png" class="media-object img-circle" style="width:80px; margin: 0 auto; padding-bottom: 10px;">
 				@endif
 				<h4 class="media-heading"><strong>{{ $user->name }}</strong></h4>
 				@if($user->role_id==1)

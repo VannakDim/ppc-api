@@ -1,21 +1,48 @@
 @extends('web.layouts.app_login')
+@section('style')
+<style>
+    .card{
+        width: 400px;
+        /* background: grey; */
+    }
+    .center-screen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .mb-3{
+        margin-bottom: 10px;
+    }
+    .card-header{
+        font-size: 3rem;
+        text-align: center;
+    }
+    hr{
+        padding-bottom: 20px;
+    }
+
+    .cc--1{
+        font-size: 15px;
+        display: flex;
+        vertical-align: middle;
+    }
+</style>
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        
+    <div class="center-screen">
         <div class="card">
-            {{-- <div class="card-header">{{ __('Register') }}</div> --}}
-
-            <div class="card-body" style="padding: 50 50">
+            <div class="card-header">{{ __('Register') }}</div>
+            <hr>
+            <div class="card-body">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-
-                    <div class="row mb-12">
+                    <div class="row mb-3">
                         <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                         <div class="col-md-8">
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" required autocomplete="name" autofocus>
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -26,7 +53,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                         <div class="col-md-8">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -61,17 +88,22 @@
                         </div>
                     </div>
 
-                    <div class="row mb-0">
+                    <div class="row mb-0" style="margin-top: 20px">
+                        <div class="col-md-6 offset-md-4"></div>
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary pull-right">
                                 {{ __('Register') }}
                             </button>
+                        </div>
+                    </div>
+                    <div class="row mb-0" style="margin-top: 20px">
+                        <div class="col-md-12 cc--1">
+                            Already have an account <a style="padding-left: 5px" href="/login"> Login</a>
+
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        
     </div>
-</div>
 @endsection

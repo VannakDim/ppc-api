@@ -10,26 +10,12 @@
 <body>
     <!-- theme layout -->
     <div class="theme-layout">
-        <!-- header -->
-        @include('web.includes.header')
-        <!-- /.header -->
-        @yield('banner')
 
         <!-- first section block -->
-        <section>
-            <div class="space">
-                <div class="container">
-                    <div class="row">
-                        <!-- left section -->
-                        @yield('content')
-                        <!-- /. left section -->
-
-                        <!-- /. right side widget -->
-                        {{-- @yield('sidebar') --}}
-                        <!--/. right side widget-->
-                    </div>
-                </div>
-            </div>
+        <section> 
+            <!-- left section -->
+            @yield('content')
+            <!-- /. left section -->
         </section>
         <!-- /.first section block -->
 

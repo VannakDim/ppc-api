@@ -17,12 +17,12 @@
 		<div class="crumb inner-page-crumb">
 			<ul>
 				<li><i class="ti-home"></i><a href="/">Home</a> / </li>
-				<li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+				<li>Dashboard</li>
 			</ul>
 		</div>
 
-		<div class="about-us">
 		@if(auth()->user()->role_id>=1)
+		<div class="about-us">
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="pull-left">Balance summary</h3>
