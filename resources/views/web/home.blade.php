@@ -33,7 +33,9 @@
 		padding: 20 20;
 		background: #3198d3;
 		border-radius: 10px;
-		color: aliceblue
+		color: aliceblue;
+		display: flex;
+		justify-content: space-around;
 	}
 	.card h5{
 		line-height: 40px;
@@ -129,8 +131,8 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-md-12">
 				<div class="about_text">
-					<h3 style="padding-bottom: 30px">កម្មវិធីថ្វាយបង្គំ</h3>
-					<h4 style="line-height: 40px">ព្រះវិហារសភាភិបាលពោធិ៍ចិនតុងមានកម្មវិធីថ្វាយបង្គំរៀងរាល់ថ្ងៃអាទិត្យ ដោយចែកចេញជា២គឺ៖</h4>
+					<h3 style="padding-bottom: 30px" class="text-center">កម្មវិធីថ្វាយបង្គំ</h3>
+					{{-- <h4 style="line-height: 40px">ព្រះវិហារសភាភិបាលពោធិ៍ចិនតុងមានកម្មវិធីថ្វាយបង្គំរៀងរាល់ថ្ងៃអាទិត្យ ដោយចែកចេញជា២គឺ៖</h4> --}}
 						<div class="card">
 							<h5>1. កម្មវិធីថ្វាយបង្គំសម្រាប់កុមារ ម៉ោង ៨:០០ ព្រឹក ដល់ម៉ោង ៩:០០ព្រឹក</h5>
 							<h5>2. កម្មវិធីថ្វាយបង្គំសម្រាប់មនុស្សធំ ម៉ោង ៩:០០ ព្រឹក ដល់ម៉ោង ១១:០០ព្រឹក</h5>
@@ -144,7 +146,7 @@
 			<h4 class="home-posts-cat-title"><a class="cat-3" href="#">ទីតាំងព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង</a></h4>
 		</div>
 		
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.300857029514!2d104.85107016284017!3d11.565208494700398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951de9cd132ef%3A0xc55711348494851c!2z4Z6W4Z-S4Z6a4Z-H4Z6c4Z634Z6g4Z624Z6a4Z6f4Z6X4Z624Z6X4Z634Z6U4Z624Z6b4Z6W4Z-E4Z6S4Z634Z-N4Z6F4Z634Z6T4Z6P4Z674Z6EIChQb2NoZW50b25nIFByZXNieXRlcmlhbiBDaHVyY2gp!5e0!3m2!1sen!2skh!4v1703948690079!5m2!1sen!2skh" width="600" height="450" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125082.03298907613!2d104.69906129726562!3d11.565221500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951de9cd132ef%3A0xc55711348494851c!2z4Z6W4Z-S4Z6a4Z-H4Z6c4Z634Z6g4Z624Z6a4Z6f4Z6X4Z624Z6X4Z634Z6U4Z624Z6b4Z6W4Z-E4Z6S4Z634Z-N4Z6F4Z634Z6T4Z6P4Z674Z6EIChQb2NoZW50b25nIFByZXNieXRlcmlhbiBDaHVyY2gp!5e0!3m2!1sen!2skh!4v1707293912380!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				
 		<hr>
 		<div class="home-posts-head mt-30">
