@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Income;
+use App\Models\Expense;
 
 class AdminController extends Controller
 {
@@ -28,6 +29,11 @@ class AdminController extends Controller
     public function detailIncome(){
         $income = Income::orderBy('created_at','desc')->paginate(10);
         return view ('web.income', ['income'=> $income]);
+    }
+
+    public function detailExpense(){
+        $expense = Expense::orderBy('created_at','desc')->paginate(10);
+        return view ('web.expense', ['expense'=> $expense]);
     }
 
 }

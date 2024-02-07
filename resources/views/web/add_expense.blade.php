@@ -5,7 +5,12 @@
 @section('style')
 <style>
 	.cus{
-		padding-left:0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.note{
+		color: rgb(168, 65, 65);
 	}
 </style>
 @endsection
@@ -17,7 +22,7 @@
 		<div class="crumb inner-page-crumb">
 			<ul>
 				<li><i class="ti-home"></i><a href="/">Home</a> / </li>
-				<li><a href="{{ route('dashboard') }}">Dashboard</a> / </li>
+				<li><a href="/expense">Expense</a> / </li>
 				<li>Add Expense</li>
 			</ul>
 		</div>
@@ -81,8 +86,8 @@
 								</div>
 
 								<div class="row">
-									<div class="col-md-12">
-										<p style="display: inline;">សូមពិនិត្យផ្ទៀងផ្ទាត់មើលទិន្នន័យ</p>
+									<div class="col-md-12 cus">
+										<div class="pull-left note">សូមពិនិត្យផ្ទៀងផ្ទាត់មើលទិន្នន័យ</div>
 										<button type="submit" class="btn btn-primary pull-right">Add expense</button>
 									</div>
 								</div>

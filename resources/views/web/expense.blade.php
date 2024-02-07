@@ -1,8 +1,8 @@
 @extends('web.layouts.app')
 
-@section('title', 'Income')
-@section('keywords', 'Income')
-@section('description', 'Income information')
+@section('title', 'Expense')
+@section('keywords', 'Expense')
+@section('description', 'Expense information')
 
 @section('style')
 <style>
@@ -20,7 +20,7 @@
 	<div class="crumb inner-page-crumb">
 		<ul>
 			<li><i class="ti-home"></i><a href="/">Home</a> / </li>
-			<li><a class="active" href="/income">Income</a></li>
+			<li><a class="active" href="/expense">Expense</a></li>
 		</ul>
 	</div>
 	<div class="about-us">
@@ -29,8 +29,8 @@
 				<div class="col-md-12 cus">
 					{{-- <h3>Income list</h3>
 					<a>+ Income</a> --}}
-					<div class="top"><h3>Income list</h3></div>
-					<div class="bottom"><a href="{{ route('addIncome') }}" class="btn btn-primary">+ Add Income</a></div>
+					<div class="top"><h3>Expense list</h3></div>
+					<div class="bottom"><a href="{{ route('addExpense') }}" class="btn btn-primary">+ Add Expense</a></div>
 				</div>
 			</div>
 			<hr>
@@ -53,7 +53,7 @@
 							</tr>
 						</thead>
 						<tbody>
-                            @foreach ($income as $item)
+                            @foreach ($expense as $item)
                             <tr>
                                 <td>{{ $item->created_at->format('d/m/Y') }}</td>
                                 <td>{{ $item->title }}</td>
@@ -71,7 +71,7 @@
                         </tbody>
 					</table>
 					<div class="d-flex">
-						{!! $income->links() !!}
+						{!! $expense->links() !!}
 					</div>
 				</div>
 			</div>

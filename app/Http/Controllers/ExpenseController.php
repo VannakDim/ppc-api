@@ -50,8 +50,8 @@ class ExpenseController extends Controller
         //validate fields
         $attrs = $request->validate([
             'title' => 'required|string',
-            'usd' => 'required|number',
-            'riel' => 'required|number',
+            'usd' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'riel' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'description' => 'required'
         ]);
         
