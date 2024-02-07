@@ -41,6 +41,16 @@
 		line-height: 40px;
 		
 	}
+	.map{
+		padding: 20px 20px;
+		text-align: center;
+	}
+	.map-frame{
+		padding: 5px 5px;
+		background: #008fd5;
+		border-radius: 20px;
+		height: 460px;
+	}
 	/*** Testimonial ***/
 	.testimonial-carousel .owl-item .testimonial-item {
 		box-shadow: 0 0 45px rgba(0, 0, 0, .07);
@@ -51,11 +61,7 @@
 	.spacer{
 		padding-top:20px;
 	}
-	.map-frame{
-		/* padding: 10px; */
-		border: 3px;
-		background: #008fd5;
-	}
+
 	#owl-demo .item img{
         display: block;
         width: 100%;
@@ -65,13 +71,12 @@
 		z-index: 0;
 	}
 
-
 	@media (max-width: 979px) {
 		#banner-caption{
 			font-size: 1.2rem;
 		}
 		#banner-title-shape{
-			margin-top: -35
+			margin-top: -35;
 		}
 		#spacer{
 		padding: 10px 0;
@@ -81,7 +86,7 @@
 
 	@media (min-width:979px){
 		#banner-title-shape{
-			margin-top: -75
+			margin-top: -75;
 		}
 		#spacer{
 		padding: 50px 0;
@@ -142,11 +147,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="home-posts-head mt-30">
-			<h4 class="home-posts-cat-title"><a class="cat-3" href="#">ទីតាំងព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង</a></h4>
+		<div class="map">
+			<a href="https://maps.app.goo.gl/3e9dwwv3bMCoLsdT6">ទីតាំងព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង</a>
 		</div>
 		
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125082.03298907613!2d104.69906129726562!3d11.565221500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951de9cd132ef%3A0xc55711348494851c!2z4Z6W4Z-S4Z6a4Z-H4Z6c4Z634Z6g4Z624Z6a4Z6f4Z6X4Z624Z6X4Z634Z6U4Z624Z6b4Z6W4Z-E4Z6S4Z634Z-N4Z6F4Z634Z6T4Z6P4Z674Z6EIChQb2NoZW50b25nIFByZXNieXRlcmlhbiBDaHVyY2gp!5e0!3m2!1sen!2skh!4v1707293912380!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<div class="map-frame">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125082.03298907613!2d104.69906129726562!3d11.565221500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951de9cd132ef%3A0xc55711348494851c!2z4Z6W4Z-S4Z6a4Z-H4Z6c4Z634Z6g4Z624Z6a4Z6f4Z6X4Z624Z6X4Z634Z6U4Z624Z6b4Z6W4Z-E4Z6S4Z634Z-N4Z6F4Z634Z6T4Z6P4Z674Z6EIChQb2NoZW50b25nIFByZXNieXRlcmlhbiBDaHVyY2gp!5e0!3m2!1sen!2skh!4v1707293912380!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
 				
 		<hr>
 		<div class="home-posts-head mt-30">
@@ -174,19 +181,10 @@
 </div>
 @endsection
 
-{{-- @section('sidebar')
-@include('web.includes.sidebar')
-@endsection --}}
-
 @section('script')
 	
-@endsection
 <script src="{{ asset('web/js/jquery-1.9.1.min.js') }}"></script> 
 <script src="{{ asset('web/js/owl.carousel.js') }}"></script>
-<style>
-    
-</style>
-
 <script>
     $(document).ready(function() {
 
@@ -210,3 +208,10 @@
 		});
     });
 </script>
+
+@endsection
+
+<style>
+    
+</style>
+
