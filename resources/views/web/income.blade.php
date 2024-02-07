@@ -34,11 +34,11 @@
 					<table id="posts-table" class="table table-striped table-hover dt-responsive display nowrap" cellspacing="0">
 						<thead>
 							<tr>
+								<th>Date</th>
 								<th>Title</th>
 								<th>USD</th>
 								<th>RIEL</th>
 								<th>Description</th>
-								<th>Date</th>
 							</tr>
 						</thead>
 						<tbody>
