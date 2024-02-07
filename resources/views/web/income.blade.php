@@ -10,7 +10,7 @@
 		/* background: rgb(188, 188, 200); */
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-end;
+		align-items: center;
 	}
 </style>
 @endsection
@@ -30,7 +30,7 @@
 					{{-- <h3>Income list</h3>
 					<a>+ Income</a> --}}
 					<div class="top"><h3>Income list</h3></div>
-					<div class="bottom"><a href="{{ route('addIncome') }}" class="btn btn-primary">+ Add Income</a></div>
+					<div class="bottom"><a href="{{ route('addIncome') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Income</a></div>
 				</div>
 			</div>
 			<hr>
