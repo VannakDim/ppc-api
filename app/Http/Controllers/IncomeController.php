@@ -25,7 +25,7 @@ class IncomeController extends Controller
         $user = Auth::user();
         $exchange_rate = ExchangeRate::where('currency','usd-riel')->first();
         if($user != null){
-            $fromDate="2024-01-15";
+            $fromDate="2024-01-01";
             $toDate=Carbon::now();
             $income_usd = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum( 'usd');
             $income_riel = Income::whereBetween('created_at',[$fromDate,Carbon::parse($toDate)->endOfDay()])->sum('riel');
@@ -51,12 +51,25 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
+        //validate fields
+        $attrs = $request->validate([
+            'title' => 'required|string',
+            'usd' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'riel' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'description' => 'required'
+        ]);
+
         $data = $request->all();
         $user = Auth::user();
+        
         if($user != null){
             $data['user_id'] = $user->id;
             $income = Income::create($data);
-            return response()->json(['income'=>$income],200);
+            if ($request->expectsJson()) {
+                return response()->json(['income'=>$income],200);
+            }else{
+                return back()->with('message','Income added Successful');
+            }
         }
         return response()->json(['error'=>'Unauthorized']);
     }

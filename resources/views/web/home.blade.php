@@ -114,11 +114,6 @@
 
 @section('content')
 <div class="col-md-12">
-	{{-- <div class="crumb inner-page-crumb">
-		<ul>
-			<li><i class="ti-home"></i><a href="#">Home</a>  </li>
-		</ul>
-	</div> --}}
 
 	<div class="home-news-block block-no-space">
 
@@ -171,7 +166,7 @@
 		</div>
 
 		<h2 class="text-center" style="color:red">Website under construction!</h2>
-		<h2 class="text-center" style="color: plum">Coming soon!!</h2>
+		<h2 class="text-center" style="color: red">Coming soon!!</h2>
 		
 	</div>
 </div>

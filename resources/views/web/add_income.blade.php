@@ -27,33 +27,57 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="pull-left">Add Income</h3>
-					
 				</div>
+				@if(Session::has('message'))
+					<p class="alert alert-success">{{ Session::get('message') }}</p>
+				@endif
 			</div>
 			<hr>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="post-grid-style">
 						<div class="post-detail">
-							<form action="">
+							<form action="/income" method="POST">
+								{{ csrf_field() }}
 								<div class="form-group">
 									<label for="formGroupExampleInput">Income Title</label>
-									<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Income title">
+									<input type="text" name="title" class="form-control  @error('title') is-invalid @enderror"  id="tiitle" placeholder="Income title" required autocomplete="title" autofocus>
+								
+									@error('title')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 								</div>
 								
 								<div class="form-group">
 									<label for="formGroupExampleInput">Dollar</label>
-									<input type="number" class="form-control" id="formGroupExampleInput" placeholder="$">
+									<input type="number" name="usd" class="form-control  @error('usd') is-invalid @enderror" id="usd" placeholder="$" required autocomplete="usd">
+									@error('usd')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 								</div>
 								
 								<div class="form-group">
 									<label for="formGroupExampleInput">Riel</label>
-									<input type="number" class="form-control" id="formGroupExampleInput" placeholder="៛">
+									<input type="number" name="riel" class="form-control  @error('riel') is-invalid @enderror" id="riel" placeholder="៛" required autocomplete="riel">
+									@error('riel')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 								</div>
 								
 								<div class="form-group">
 									<label for="formGroupExampleInput">Description</label>
-									<textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Description" rows="5"></textarea>
+									<textarea type="text" name="description" class="form-control  @error('description') is-invalid @enderror" id="description" placeholder="Description" rows="5"  required autocomplete="description"></textarea>
+									@error('description')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
 								</div>
 
 								<div class="row">
@@ -62,6 +86,7 @@
 										<button type="submit" class="btn btn-primary pull-right">Add income</button>
 									</div>
 								</div>
+
 							</form>
 						</div>
 					</div>

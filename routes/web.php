@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpenseController;
 
 
 /*
@@ -48,5 +50,13 @@ Route::middleware(['auth:sanctum','is_admin'])->group(function () {
     Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('dashboardRoute');
     Route::get('/income-dashboard', [AdminController::class, 'income'])->name('addIncome');
     Route::get('/expense-dashboard', [AdminController::class, 'expense'])->name('addExpense');
+
+    // Balance
+    Route::post('/income', [IncomeController::class, 'store'])->name('storeIncome');
+    Route::post('/expense', [ExpenseController::class, 'store'])->name('storeExpense');
+
+    Route::get('/income', [AdminController::class, 'detailIncome'])->name('detailIncome');
+    
+    Route::get('/expense', [AdminController::class, 'detailExpense'])->name('detailExpense');
 
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Income;
 
 class AdminController extends Controller
 {
@@ -24,6 +25,9 @@ class AdminController extends Controller
         return view('web.add_expense');
     }
 
-    
+    public function detailIncome(){
+        $income = Income::orderBy('created_at','desc')->paginate(10);
+        return view ('web.income', ['income'=> $income]);
+    }
 
 }

@@ -44,17 +44,33 @@
             
             <li><a href="#" class="nav__link">Download</a></li>
             
-
-            <li><a href="#" class="nav__link">Contact</a></li>
-
+            @if(Auth::check())
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Transaction <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <li>
+                    <a class="dropdown__link" href="{{ route('detailIncome') }}" title="Income"><i class="ri-arrow-down-circle-line"></i> Income</a>
+                  </li>
+                  
+                  <li>
+                    <a class="dropdown__link" href="{{ route('detailExpense') }}" title="Expense"><i class="ri-arrow-up-circle-line"></i> Expense</a>
+                  </li>
+                  
+                </li>
+              </ul>
+            </li>
+            @endif
             <!--=============== DROPDOWN 2 ===============-->
+            @if(Auth::check())
             <li class="dropdown__item">
             <div class="nav__link">
               <i class="ri-user-line"></i> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
             </div>
                 <ul class="dropdown__menu">
                   <li>
-                    @if(Auth::check())
                     <li>
                     <a class="dropdown__link" href="{{ route('dashboard') }}" title="Dashboard"><i class="ri-dashboard-3-line"></i> Dashboard</a>
                     </li>
@@ -62,15 +78,12 @@
                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                       {{ csrf_field() }}
                     </form>
-                    @else
-                      <a href="/login" class="dropdown__link">
-                        <i class="ri-user-line"></i> Login
-                      </a>                          
-                    @endif
                   </li>
                 </ul>
-            </li>
-
+              </li>
+            @else
+            <li><a href="/login" class="nav__link"><i class="ri-user-line"></i> Login</a></li>
+            @endif
           </ul>
       </div>
     </nav>

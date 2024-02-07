@@ -47,12 +47,24 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
+        //validate fields
+        $attrs = $request->validate([
+            'title' => 'required|string',
+            'usd' => 'required|number',
+            'riel' => 'required|number',
+            'description' => 'required'
+        ]);
+        
         $data = $request->all();
         $user = Auth::user();
         if($user != null){
             $data['user_id'] = $user->id;
             $expense = Expense::create($data);
-            return response()->json(['Expense'=>$expense],200);
+            if ($request->expectsJson()) {
+                return response()->json(['Expense'=>$expense],200);
+            }else{
+                return back()->with('message','Expense added Successful');
+            }
         }
         return response()->json(['error'=>'Unauthorized']);
     }
