@@ -148,7 +148,7 @@
 			</div>
 		</div>
 		<div class="map">
-			<a href="https://maps.app.goo.gl/3e9dwwv3bMCoLsdT6">ទីតាំងព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង</a>
+			<a style="font-size: 15px" href="https://maps.app.goo.gl/3e9dwwv3bMCoLsdT6">ទីតាំងព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង</a>
 		</div>
 		
 		<div class="map-frame">
