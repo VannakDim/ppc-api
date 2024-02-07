@@ -63,8 +63,8 @@ hr{
                 <div class="clearfix"></div>
                 <hr class="hr">
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fa fa-paper-plane"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61554989483207"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://t.me/vannak_dim"><i class="fa fa-paper-plane"></i></a>
                 </div>
             </div>
 

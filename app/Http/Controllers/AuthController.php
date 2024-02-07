@@ -47,6 +47,7 @@ class AuthController extends Controller
             return response([
                 'message' => 'Invalid credentials.'
             ], 403);
+            
         }
 
         //return user & token in response
@@ -57,7 +58,7 @@ class AuthController extends Controller
     }
 
     // logout user
-    public function logout()
+    public function logout($format = 'view')
     {
         auth()->user()->tokens()->delete();
         auth()->logout();

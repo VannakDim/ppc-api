@@ -16,12 +16,12 @@
 
         <!-- Styles -->
         
-    </head>
+    </head> 
     <body class="antialiased">
         <div class="container">
             <div class="screen">
                 <div class="screen__content">
-                    <form class="login" method="POST" action="/login" >
+                    <form class="login" method="POST" action="{{ route('login') }}" >
                         {{ csrf_field() }}
                         <div class="login__field">
                             <i class="login__icon fas fa-user"></i>
@@ -52,7 +52,9 @@
                             </div>
                         </div>		
                     </form>
-                    
+                    @if(Session::has('message'))
+					    <p class="alert alert-success">{{ Session::get('message') }}</p>
+				    @endif
                     {{-- <div class="social-login">
                         <h3>log in via</h3>
                         <div class="social-icons">

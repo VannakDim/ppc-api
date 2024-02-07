@@ -74,15 +74,15 @@
                     <li>
                     <a class="dropdown__link" href="{{ route('dashboard') }}" title="Dashboard"><i class="ri-dashboard-3-line"></i> Dashboard</a>
                     </li>
-                    <li><a class="dropdown__link" title="Logout" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line"></i> Logout</a></li>
-                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                    <li><a class="dropdown__link" title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line"></i> Logout</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                     </form>
                   </li>
                 </ul>
               </li>
             @else
-            <li><a href="/login" class="nav__link"><i class="ri-user-line"></i> Login</a></li>
+            <li><a href="{{ route('login') }}" class="nav__link"><i class="ri-user-line"></i> Login</a></li>
             @endif
           </ul>
       </div>
