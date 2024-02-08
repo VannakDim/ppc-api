@@ -54,11 +54,9 @@
                   <li>
                     <a class="dropdown__link" href="{{ route('detailIncome') }}" title="Income"><i class="ri-arrow-down-circle-line"></i> Income</a>
                   </li>
-                  
                   <li>
                     <a class="dropdown__link" href="{{ route('detailExpense') }}" title="Expense"><i class="ri-arrow-up-circle-line"></i> Expense</a>
                   </li>
-                  
                 </li>
               </ul>
             </li>
@@ -66,21 +64,23 @@
             <!--=============== DROPDOWN 2 ===============-->
             @if(Auth::check())
             <li class="dropdown__item">
-            <div class="nav__link">
-              <i class="ri-user-line"></i> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-                <ul class="dropdown__menu">
+              <div class="nav__link">
+                {{ Auth::user()->name }} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
                   <li>
-                    <li>
                     <a class="dropdown__link" href="{{ route('dashboard') }}" title="Dashboard"><i class="ri-dashboard-3-line"></i> Dashboard</a>
-                    </li>
-                    <li><a class="dropdown__link" title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line"></i> Logout</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                    </form>
                   </li>
-                </ul>
-              </li>
+                  <li>
+                    <a class="dropdown__link" title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line"></i> Logout</a>
+                  </li>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+              </ul>
+            </li>
             @else
             <li><a href="{{ route('login') }}" class="nav__link"><i class="ri-user-line"></i> Login</a></li>
             @endif

@@ -27,6 +27,7 @@
 		color: aliceblue;
 		display: flex;
 		justify-content: space-around;
+		box-shadow: 1px 1px 5px #888888;
 	}
 	.card h5{
 		line-height: 40px;
@@ -44,6 +45,7 @@
 			color: aliceblue;
 			display: block;
 			justify-content: space-around;
+			
 		}
 	}
 	.about_text{
@@ -58,6 +60,7 @@
 		background: #008fd5;
 		border-radius: 10px;
 		height: 470px;
+		box-shadow: 1px 1px 5px #888888;
 	}
 	/*** Testimonial ***/
 	.testimonial-carousel .owl-item .testimonial-item {
@@ -84,7 +87,7 @@
 			font-size: 1.2rem;
 		}
 		#banner-title-shape{
-			margin-top: -35;
+			margin-top: -75;
 		}
 		#spacer{
 		padding: 10px 0;
@@ -94,7 +97,7 @@
 
 	@media (min-width:979px){
 		#banner-title-shape{
-			margin-top: -75;
+			margin-top: -85;
 		}
 		#spacer{
 		padding: 50px 0;
@@ -117,9 +120,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-info" id="banner-title-shape" style="box-shadow: 0 8px 61px -2px rgba(0,0,0,.2); background: rgba(238, 234, 234, 0.7);">
+                    <div class="panel panel-info" id="banner-title-shape" style="box-shadow: 0 8px 61px -2px rgba(0,0,0,.2); background: #008ed5c2;">
                         <div class="panel-body">
-                            <h4 class="text-primary text-center" id="banner-caption" style="margin-top: 0px; color: #008fd5;">ព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង សូមស្វាគមន៍</h4>
+                            <h4 class="text-primary text-center" id="banner-caption" style="margin-top: 0px; color: #ffffff;">ព្រះវិហារសភាភិបាលពោធិ៍ចិនតុង សូមស្វាគមន៍</h4>
                         </div>
                     </div>
                 </div>
@@ -164,7 +167,7 @@
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125082.03298907613!2d104.69906129726562!3d11.565221500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951de9cd132ef%3A0xc55711348494851c!2z4Z6W4Z-S4Z6a4Z-H4Z6c4Z634Z6g4Z624Z6a4Z6f4Z6X4Z624Z6X4Z634Z6U4Z624Z6b4Z6W4Z-E4Z6S4Z634Z-N4Z6F4Z634Z6T4Z6P4Z674Z6EIChQb2NoZW50b25nIFByZXNieXRlcmlhbiBDaHVyY2gp!5e0!3m2!1sen!2skh!4v1707293912380!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 				
-		<hr>
+		{{-- <hr> --}}
 		<div class="home-posts-head mt-30">
 			<h4 class="home-posts-cat-title"><a class="cat-3" href="#">CHRISTMAS (24-DEC-2023)</a></h4>
 		</div>
