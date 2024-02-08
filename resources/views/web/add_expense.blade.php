@@ -132,11 +132,12 @@ $(document).ready(function(){
 </script>
 <script>
 	@if($message = session('message'))
-	Swal.fire(
-	  'Good job!',
-	  '{{ $message }}',
-	  'success'
-	)
+	Swal.fire({
+	  title: 'Good job!',
+	  text: '{{ $message }}',
+	  icon: "success",
+	  timer: 5000
+	  })
 	@endif
 </script>
 @endsection

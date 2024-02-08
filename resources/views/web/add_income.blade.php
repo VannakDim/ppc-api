@@ -131,10 +131,12 @@ $(document).ready(function(){
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 	@if($message = session('message'))
-	Swal.fire(
-	  'Good job!',
-	  '{{ $message }}',
-	  'success'
+	Swal.fire({
+	  title: 'Good job!',
+	  text: '{{ $message }}',
+	  icon: "success",
+	  timer: 5000
+	  }
 	)
 	@endif
 </script>

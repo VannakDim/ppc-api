@@ -12,6 +12,20 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+
+	/* @media screen and (min-width: 768px) {
+		.table{
+			margin: 5px 5px 20px 5px;
+			width: 98.5%;
+			box-shadow: 1px 1px 5px #888888;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.table{
+			margin-bottom: 20px;
+		}
+	} */
 </style>
 @endsection
 
@@ -52,6 +66,7 @@
 								<th>Description</th>
 								<th>Date</th>
 							</tr>
+							
 						</thead>
 						<tbody>
                             @foreach ($income as $item)
