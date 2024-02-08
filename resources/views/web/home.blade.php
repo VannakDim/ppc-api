@@ -20,15 +20,6 @@
 		width: 100%;
 		height: auto;
 	}
-
-	@media screen and (max-width: 1024px) {
-		#owl-demo{
-			margin-top: 45px;
-		}
-	}
-	.about_text{
-		line-height: 3rem;
-	}
 	.card{
 		padding: 20 20;
 		background: #3198d3;
@@ -39,7 +30,24 @@
 	}
 	.card h5{
 		line-height: 40px;
-		
+	}
+
+	@media screen and (max-width: 1024px) {
+		#owl-demo{
+			margin-top: 45px;
+		}
+
+		.card{
+			padding: 20 20;
+			background: #3198d3;
+			border-radius: 10px;
+			color: aliceblue;
+			display: block;
+			justify-content: space-around;
+		}
+	}
+	.about_text{
+		line-height: 3rem;
 	}
 	.map{
 		padding: 20px 20px;
@@ -139,8 +147,9 @@
 					<h3 style="padding-bottom: 30px" class="text-center">កម្មវិធីថ្វាយបង្គំ</h3>
 					{{-- <h4 style="line-height: 40px">ព្រះវិហារសភាភិបាលពោធិ៍ចិនតុងមានកម្មវិធីថ្វាយបង្គំរៀងរាល់ថ្ងៃអាទិត្យ ដោយចែកចេញជា២គឺ៖</h4> --}}
 						<div class="card">
-							<h5>1. កម្មវិធីថ្វាយបង្គំសម្រាប់កុមារ ម៉ោង ៨:០០ ព្រឹក ដល់ម៉ោង ៩:០០ព្រឹក</h5>
-							<h5>2. កម្មវិធីថ្វាយបង្គំសម្រាប់មនុស្សធំ ម៉ោង ៩:០០ ព្រឹក ដល់ម៉ោង ១១:០០ព្រឹក</h5>
+							<h5>1. សម្រាប់កុមារ ម៉ោង ៨:០០ ព្រឹក ដល់ម៉ោង ៩:០០ព្រឹក</h5>
+							<hr>
+							<h5>2. សម្រាប់មនុស្សធំ ម៉ោង ៩:០០ ព្រឹក ដល់ម៉ោង ១១:០០ព្រឹក</h5>
 						</div>
 					{{-- <p>{!! \Illuminate\Support\Str::limit($page->page_content,4000,'...') !!}</p>
 					<div class="btn btn-primary" style="margin-bottom:20px"><a style="color: antiquewhite" href="{{ route('pagePage', $page->page_slug) }}">Read more</a></div> --}}
