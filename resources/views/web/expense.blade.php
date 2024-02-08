@@ -45,21 +45,23 @@
 					<table id="posts-table" class="table table-striped table-hover dt-responsive display nowrap" cellspacing="0">
 						<thead>
 							<tr>
-								<th>Date</th>
+								<th>No</th>
 								<th>Title</th>
-								<th>USD</th>
-								<th>RIEL</th>
+								<th style="text-align: right">USD</th>
+								<th style="text-align: right">RIEL</th>
 								<th>Description</th>
+								<th>Date</th>
 							</tr>
 						</thead>
 						<tbody>
                             @foreach ($expense as $item)
                             <tr>
-                                <td>{{ $item->created_at->format('d/m/Y') }}</td>
+								<td>{{$loop->iteration}}</td>
                                 <td>{{ $item->title }}</td>
-                                <td>${{ number_format($item->usd, 2) }}</td>
-                                <td>{{ number_format($item->riel) }}</td>
+                                <td align="right">${{ number_format($item->usd, 2) }}</td>
+                                <td align="right">{{ number_format($item->riel) }} ៛</td>
                                 <td>{{ $item->description }}</td>
+                                <td>{{ $item->created_at->format('d/m/Y') }}</td>
                                 {{-- <td>
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 </td>
