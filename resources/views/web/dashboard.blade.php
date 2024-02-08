@@ -40,7 +40,7 @@
 									<h3>$ {{ number_format($income_usd,2) }}</h3>
 									<h3>៛ {{ number_format($income_riel) }}</h3>
 									</ul>
-									<a href="{{ route('addIncome') }}" class="btn btn-success pull-left btn-flat"><i class="fa fa-plus"></i> Add Income</a>
+									<a href="{{ route('detailIncome') }}" class="btn btn-success pull-left btn-flat">Income list</a>
 							</div>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 									<h3>$ {{ number_format($expense_usd,2) }}</h3>
 									<h3>៛ {{ number_format($expense_riel) }}</h3>
 									</ul>
-								<a href="{{ route('addExpense') }}" class="btn btn-danger pull-left btn-flat"><i class="fa fa-plus"></i> Add Expense</a>
+								<a href="{{ route('detailExpense') }}" class="btn btn-danger pull-left btn-flat">Expense list</a>
 							</div>
 						</div>
 					</div>
