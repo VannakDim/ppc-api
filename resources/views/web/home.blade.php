@@ -46,10 +46,10 @@
 		text-align: center;
 	}
 	.map-frame{
-		padding: 5px 5px;
+		padding: 10px 10px;
 		background: #008fd5;
-		border-radius: 20px;
-		height: 460px;
+		border-radius: 10px;
+		height: 470px;
 	}
 	/*** Testimonial ***/
 	.testimonial-carousel .owl-item .testimonial-item {
