@@ -111,9 +111,20 @@
 @endsection
 
 @section('script')
+<script  type="text/javascript" src="{{ asset('web/js/numToWord.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+
+	const inputUSD = document.querySelector("#usd");
+	const inputRIEL = document.querySelector("#riel");
+	const description = document.querySelector("#description");
+	inputUSD.addEventListener('keyup', () => {
+    description.value = numberToWords.toWords( inputUSD.value) + ' ដុល្លា និង ' + numberToWords.toWords( inputRIEL.value) + ' រៀល';
+	});
+	inputRIEL.addEventListener('keyup', () => {
+	description.value = numberToWords.toWords( inputUSD.value) + ' ដុល្លា និង​ ' + numberToWords.toWords( inputRIEL.value) + ' រៀល';
+	});
 });
 </script>
 @endsection
