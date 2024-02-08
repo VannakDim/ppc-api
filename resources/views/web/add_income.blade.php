@@ -33,9 +33,9 @@
 				<div class="col-md-12">
 					<h3 class="pull-left">Add Income</h3>
 				</div>
-				@if(Session::has('message'))
+				{{-- @if(Session::has('message'))
 					<p class="alert alert-success">{{ Session::get('message') }}</p>
-				@endif
+				@endif --}}
 			</div>
 			<hr>
 			<div class="row">
@@ -127,5 +127,15 @@ $(document).ready(function(){
 	description.value = numberToWords.toWords( inputUSD.value) + ' ដុល្លា និង​ ' + numberToWords.toWords( inputRIEL.value) + ' រៀល';
 	});
 });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+	@if($message = session('message'))
+	Swal.fire(
+	  'Good job!',
+	  '{{ $message }}',
+	  'success'
+	)
+	@endif
 </script>
 @endsection

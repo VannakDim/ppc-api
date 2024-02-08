@@ -33,9 +33,9 @@
 				<div class="col-md-12">
 					<h3 class="pull-left">Add Expense</h3>
 				</div>
-				@if(Session::has('message'))
+				{{-- @if(Session::has('message'))
 					<p class="alert alert-success">{{ Session::get('message') }}</p>
-				@endif
+				@endif --}}
 			</div>
 			<hr>
 			<div class="row">
@@ -49,9 +49,11 @@
 									<input type="text" name="title" class="form-control  @error('title') is-invalid @enderror"  id="tiitle" placeholder="Expense title" required autocomplete="title" autofocus>
 								
 									@error('title')
+									<div class="error">
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
+									</div>
 									@enderror
 								</div>
 								
@@ -111,6 +113,7 @@
 @endsection
 
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script  type="text/javascript" src="{{ asset('web/js/numToWord.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -126,5 +129,14 @@ $(document).ready(function(){
 	description.value = numberToWords.toWords( inputUSD.value) + ' ដុល្លា និង​ ' + numberToWords.toWords( inputRIEL.value) + ' រៀល';
 	});
 });
+</script>
+<script>
+	@if($message = session('message'))
+	Swal.fire(
+	  'Good job!',
+	  '{{ $message }}',
+	  'success'
+	)
+	@endif
 </script>
 @endsection
