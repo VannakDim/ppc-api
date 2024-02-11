@@ -57,7 +57,7 @@
 								
 								<div class="form-group">
 									<label for="formGroupExampleInput">Dollar</label>
-									<input type="number" name="usd" class="form-control  @error('usd') is-invalid @enderror" id="usd" placeholder="$" required autocomplete="usd">
+									<input type="number" step=".01" name="usd" class="form-control  @error('usd') is-invalid @enderror" min="0" id="usd" placeholder="$" required autocomplete="usd">
 									@error('usd')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>

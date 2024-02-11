@@ -20,7 +20,7 @@
 
 
             <!--=============== DROPDOWN 1 ===============-->
-            <li class="dropdown__item">
+            {{-- <li class="dropdown__item">
                 <div class="nav__link">
                   News <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
@@ -38,11 +38,11 @@
                       </a>
                   </li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li><a href="#" class="nav__link">Members</a></li>
             
-            <li><a href="#" class="nav__link">Download</a></li>
+            <li><a href="#" class="nav__link">Gallery</a></li>
             
             @if(Auth::check())
             <li class="dropdown__item">
@@ -82,7 +82,7 @@
               </ul>
             </li>
             @else
-            <li><a href="{{ route('login') }}" class="nav__link"><i class="ri-user-line"></i> Login</a></li>
+            <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
             @endif
           </ul>
       </div>
