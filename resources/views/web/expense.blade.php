@@ -72,7 +72,7 @@
                             @endforeach
                         </tbody>
 					</table>
-					<div class="d-flex">
+					<div class="d-flex" style="display: inline; justify-items: center;">
 						{!! $expense->links() !!}
 					</div>
 				</div>
