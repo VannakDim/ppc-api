@@ -1,4 +1,4 @@
-@extends('web.layouts.app')
+@extends('web.layouts.app_no_sidebar')
 
 @section('title', 'Expense')
 @section('keywords', 'Expense')
@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-<div class="col-md-8">
+<div class="col-md-12">
 	<div class="crumb inner-page-crumb">
 		<ul>
 			<li><i class="ti-home"></i><a href="/">Home</a> / </li>

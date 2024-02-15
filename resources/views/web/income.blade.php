@@ -1,4 +1,4 @@
-@extends('web.layouts.app')
+@extends('web.layouts.app_no_sidebar')
 
 @section('title', 'Income')
 @section('keywords', 'Income')
@@ -13,24 +13,11 @@
 		align-items: center;
 	}
 
-	/* @media screen and (min-width: 768px) {
-		.table{
-			margin: 5px 5px 20px 5px;
-			width: 98.5%;
-			box-shadow: 1px 1px 5px #888888;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		.table{
-			margin-bottom: 20px;
-		}
-	} */
 </style>
 @endsection
 
 @section('content')
-<div class="col-md-8">
+<div class="col-md-12">
 	<div class="crumb inner-page-crumb">
 		<ul>
 			<li><i class="ti-home"></i><a href="/">Home</a> / </li>
