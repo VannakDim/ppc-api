@@ -11,7 +11,7 @@ use App\Models\ExchangeRate;
 
 class WebController extends Controller
 {
-    public function dashboard()
+    public function balance()
     {   $user = Auth::user();
         $exchange_rate = ExchangeRate::where('currency','usd-riel')->first();
         if($user != null){

@@ -22,9 +22,9 @@
 			<div>
 				<div class="btn-group btn-group-justified">
 					<div class="btn-group">
-						<a href="{{ route('dashboard') }}" class="tip btn btn-default btn-sm"><i class="fa fa-user"></i><span class="hidden-sm hidden-xs"> Edit Profile</span></a>
+						<a href="{{ route('balance') }}" class="tip btn btn-default btn-sm"><i class="fa fa-user"></i><span class="hidden-sm hidden-xs"> Edit Profile</span></a>
 					</div><div class="btn-group">
-						<a href="{{ route('dashboard') }}" class="tip btn btn-default btn-sm"><i class="fa fa-key"></i><span class="hidden-sm hidden-xs"> Change Password</span></a>
+						<a href="{{ route('balance') }}" class="tip btn btn-default btn-sm"><i class="fa fa-key"></i><span class="hidden-sm hidden-xs"> Change Password</span></a>
 					</div>
 				</div>
 			</div>

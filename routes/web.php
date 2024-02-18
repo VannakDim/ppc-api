@@ -40,7 +40,7 @@ Route::post('/logout', [WebAuthController::class, 'logout'])->name('logout');
 //Protected route
 Route::middleware(['auth:sanctum'])->group(function () {
     // Dashboard
-    Route::get('/dashboard', [WebController::class, 'dashboard'])->name('dashboard');
+    Route::get('/balance', [WebController::class, 'balance'])->name('balance');
 
 });
 

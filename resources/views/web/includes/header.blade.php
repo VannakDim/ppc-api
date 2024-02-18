@@ -57,6 +57,9 @@
                   <li>
                     <a class="dropdown__link" href="{{ route('detailExpense') }}" title="Expense"><i class="ri-arrow-up-circle-line"></i> Expense</a>
                   </li>
+                  <li>
+                    <a class="dropdown__link" href="{{ route('balance') }}" title="Dashboard"><i class="ri-dashboard-3-line"></i> Balance</a>
+                  </li>
                 </li>
               </ul>
             </li>
@@ -69,9 +72,6 @@
               </div>
               <ul class="dropdown__menu">
                 <li>
-                  <li>
-                    <a class="dropdown__link" href="{{ route('dashboard') }}" title="Dashboard"><i class="ri-dashboard-3-line"></i> Dashboard</a>
-                  </li>
                   <li>
                     <a class="dropdown__link" title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line"></i> Logout</a>
                   </li>

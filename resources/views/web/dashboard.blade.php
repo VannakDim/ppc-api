@@ -17,7 +17,7 @@
 		<div class="crumb inner-page-crumb">
 			<ul>
 				<li><i class="ti-home"></i><a href="/">Home</a> / </li>
-				<li>Dashboard</li>
+				<li>Balance</li>
 			</ul>
 		</div>
 

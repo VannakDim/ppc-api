@@ -21,6 +21,7 @@
 	<div class="crumb inner-page-crumb">
 		<ul>
 			<li><i class="ti-home"></i><a href="/">Home</a> / </li>
+			<li><a href="/balance">Balance</a> / </li>
 			<li><a class="active" href="/income">Income</a></li>
 		</ul>
 	</div>
